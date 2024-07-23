@@ -18,7 +18,7 @@ const Profile = () => {
   useEffect(()=>{
     const fetch = async()=>{
       const response = await axios.get(
-        "http://localhost:7500/api/getuserinformation",{headers}
+        `${process.env.backend_url}/api/getuserinformation`,{headers}
       );
       setProfile(response.data);
       dispatch(authActions.changeRole(response.data.role));

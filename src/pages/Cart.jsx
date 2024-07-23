@@ -16,7 +16,7 @@ const Cart = () => {
   useEffect(()=>{
     const fetch= async()=>{
     const response = await axios.get(
-      "http://localhost:7500/api/getusercart",
+      `${process.env.backend_url}/api/getusercart`,
       {headers}
     );
    
@@ -27,7 +27,7 @@ const Cart = () => {
 
   const deleteItem = async(bookid)=>{
    const response = await axios.put(
-      `http://localhost:7500/api/removefromcart/${bookid}`,{},
+      `${process.env.backend_url}/api/removefromcart/${bookid}`,{},
       {headers}
     );
    
@@ -48,7 +48,7 @@ const Cart = () => {
   const handlePlaceOrder=async()=>{
     try{
       const response = await axios.post(
-        'http://localhost:7500/api/placeorder',
+        `${process.env.backend_url}/api/placeorder`,
         {order: cart},
         {headers}
       );

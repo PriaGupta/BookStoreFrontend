@@ -33,7 +33,7 @@ const UpdateBook = () => {
               }
               else{
                 const response = await axios.put(
-                    "http://localhost:7500/api/updatebook",Data,
+                    `${process.env.backend_url}/api/updatebook`,Data,
                     {headers}
                 );
                 setData({
@@ -56,7 +56,7 @@ const UpdateBook = () => {
       useEffect(()=>{
         const fetch= async()=>{
         const response = await axios.get(
-          `http://localhost:7500/api/getbookbyid/${id}`,{headers}
+          `${process.env.backend_url}/api/getbookbyid/${id}`,{headers}
         ); 
         setData(response.data.data);
       };

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-hot-toast';
+
 const BookCard = ({data,favourite}) => {
   const headers={
     id: localStorage.getItem("id"),
@@ -10,7 +11,7 @@ const BookCard = ({data,favourite}) => {
   };
   const handleRemovefavourite= async()=>{
     const response = await axios.put(
-      "http://localhost:7500/api/remove-bookfrom-favourite",
+      `${process.env.backend_url}/api/remove-bookfrom-favourite`,
       {},
       {headers}
     );

@@ -10,7 +10,7 @@ const Favourites = () => {
   useEffect(()=>{
     const fetch= async()=>{
     const response = await axios.get(
-      "http://localhost:7500/api/get-favourite-books",
+      `${process.env.backend_url}/api/get-favourite-books`,
       {headers}
     );
    

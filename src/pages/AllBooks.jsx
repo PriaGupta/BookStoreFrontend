@@ -8,7 +8,7 @@ const AllBooks = () => {
   useEffect(()=>{
   const fetch= async ()=>{
     const response= await axios.get(
-      "http://localhost:7500/api/getallbooks"
+      `${process.env.backend_url}/api/getallbooks`
     );
   
    setData(response.data.data);

@@ -12,7 +12,7 @@ const OrderHistory = () => {
   useEffect(()=>{
     const fetch= async()=>{
       const response = await axios.get(
-        "http://localhost:7500/api/getorderhistoryofuser",
+        `${process.env.backend_url}/api/getorderhistoryofuser`,
         {headers}
       );
      

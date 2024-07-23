@@ -2,12 +2,15 @@ import React, { useState,useEffect } from 'react'
 import axios from 'axios';
 import BookCard from './BookCard';
 import Loader from './Loader';
+
+const backend_url = 'https://bookstorebackend-j4km.onrender.com/'
+
 const RecentlyAdded = () => {
     const [Data,setData]=useState();
     useEffect(()=>{
     const fetch= async ()=>{
       const response= await axios.get(
-        "http://localhost:7500/api/getrecentsbooks"
+        `${backend_url}/api/getrecentsbooks`
       );
      setData(response.data.data);
     };
