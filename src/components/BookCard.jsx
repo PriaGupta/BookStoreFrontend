@@ -11,7 +11,7 @@ const BookCard = ({data,favourite}) => {
   };
   const handleRemovefavourite= async()=>{
     const response = await axios.put(
-      `${process.env.backend_url}/api/remove-bookfrom-favourite`,
+      `${process.env.REACT_APP_BASE_URL}/api/remove-bookfrom-favourite`,
       {},
       {headers}
     );

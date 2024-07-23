@@ -4,7 +4,7 @@ import RecentlyAdded from '../components/RecentlyAdded'
 
 const Home = () => {
 
-  console.log(process.env.backend_url,'backend_url');
+  console.log(process.env.REACT_APP_BASE_URL,'backend_url');
 
 
   return (

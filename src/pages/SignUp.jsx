@@ -24,7 +24,7 @@ const SignUp = () => {
        }
        else{
         const response = await axios.post(
-          `${process.env.backend_url}/api/signup`,
+          `${process.env.REACT_APP_BASE_URL}/api/signup`,
           values
         );
         toast(response.data.message);

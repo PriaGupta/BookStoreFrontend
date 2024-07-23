@@ -3,7 +3,7 @@ import axios from 'axios';
 import BookCard from './BookCard';
 import Loader from './Loader';
 
-const backend_url = 'https://bookstorebackend-j4km.onrender.com/'
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 
 const RecentlyAdded = () => {
     const [Data,setData]=useState();
