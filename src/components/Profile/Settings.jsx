@@ -12,7 +12,7 @@ const Settings = () => {
   useEffect(()=>{
     const fetch= async()=>{
       const response = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/api/getuserinformation`,
+        `${process.env.VITE_API_BASE_URL}/api/getuserinformation`,
         {headers}
       );
      
@@ -29,7 +29,7 @@ const Settings = () => {
 
   const handleAddressSubmit=async()=>{
     const response = await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/api/updateaddress`,Value,
+      `${process.env.VITE_API_BASE_URLL}/api/updateaddress`,Value,
       {headers}
     );
     toast(response.data.message);

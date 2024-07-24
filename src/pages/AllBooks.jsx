@@ -8,7 +8,7 @@ const AllBooks = () => {
   useEffect(()=>{
   const fetch= async ()=>{
     const response= await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/api/getallbooks`
+      `${process.env.VITE_API_BASE_URL}/api/getallbooks`
     );
   
    setData(response.data.data);

@@ -24,7 +24,7 @@ const SignIn = () => {
        }
        else{
         const response = await axios.post(
-          `${process.env.REACT_APP_BASE_URL}/api/signin`,
+          `${process.env.VITE_API_BASE_URL}/api/signin`,
           values
         );
         toast(response.data.message);

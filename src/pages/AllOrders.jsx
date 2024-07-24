@@ -19,7 +19,7 @@ const AllOrders = () => {
     useEffect(()=>{
         const fetch = async()=>{
             const response = await axios.get(
-                `${process.env.REACT_APP_BASE_URL}/api/getallorders`,
+                `${process.env.VITE_API_BASE_URL}/api/getallorders`,
                 {headers}
             );
             setallorder(response.data.data);
@@ -34,7 +34,7 @@ const AllOrders = () => {
     const SubmitChanges= async(i)=>{
         const id= allorder[i]._id;
         const response = await axios.put(
-            `${process.env.REACT_APP_BASE_URL}/api/updatestatus/${id}`,
+            `${process.env.VITE_API_BASE_URL}/api/updatestatus/${id}`,
             Values,
             {headers}
         );

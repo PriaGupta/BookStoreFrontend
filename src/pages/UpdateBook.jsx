@@ -33,7 +33,7 @@ const UpdateBook = () => {
               }
               else{
                 const response = await axios.put(
-                    `${process.env.REACT_APP_BASE_URL}/api/updatebook`,Data,
+                    `${process.env.VITE_API_BASE_URL}/api/updatebook`,Data,
                     {headers}
                 );
                 setData({
@@ -56,7 +56,7 @@ const UpdateBook = () => {
       useEffect(()=>{
         const fetch= async()=>{
         const response = await axios.get(
-          `${process.env.REACT_APP_BASE_URL}/api/getbookbyid/${id}`,{headers}
+          `${process.env.VITE_API_BASE_URL}/api/getbookbyid/${id}`,{headers}
         ); 
         setData(response.data.data);
       };

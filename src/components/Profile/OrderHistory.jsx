@@ -12,7 +12,7 @@ const OrderHistory = () => {
   useEffect(()=>{
     const fetch= async()=>{
       const response = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/api/getorderhistoryofuser`,
+        `${process.env.VITE_API_BASE_URL}/api/getorderhistoryofuser`,
         {headers}
       );
      

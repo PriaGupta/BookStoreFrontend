@@ -18,7 +18,7 @@ const ViewBookDetails = () => {
   useEffect(()=>{
     const fetch= async()=>{
     const response = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/api/getbookbyid/${id}`
+      `${process.env.VITE_API_BASE_URL}/api/getbookbyid/${id}`
     );
    
     setData(response.data.data);
@@ -33,14 +33,14 @@ const ViewBookDetails = () => {
   };
   const handleFavourite=async()=>{
     const response= await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/api/add-bookto-favourite`,
+      `${process.env.VITE_API_BASE_URL}/api/add-bookto-favourite`,
       {},
       {headers});
       toast(response.data.message);
   }
   const handleCart= async()=>{
     const response= await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/api/addtocart`,
+      `${process.env.VITE_API_BASE_URL}/api/addtocart`,
       {},
       {headers});
       toast(response.data.message);
@@ -49,7 +49,7 @@ const ViewBookDetails = () => {
  
   const handleDelete = async()=>{
     const response= await axios.delete(
-      `${process.env.REACT_APP_BASE_URL}/api/deletebook`,
+      `${process.env.VITE_API_BASE_URL}/api/deletebook`,
       {headers});
       toast(response.data.message);
       navigate("/allbooks");

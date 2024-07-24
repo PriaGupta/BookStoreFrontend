@@ -16,7 +16,7 @@ const Cart = () => {
   useEffect(()=>{
     const fetch= async()=>{
     const response = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/api/getusercart`,
+      `${process.env.VITE_API_BASE_URL}/api/getusercart`,
       {headers}
     );
    
@@ -27,7 +27,7 @@ const Cart = () => {
 
   const deleteItem = async(bookid)=>{
    const response = await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/api/removefromcart/${bookid}`,{},
+      `${process.env.VITE_API_BASE_URL}/api/removefromcart/${bookid}`,{},
       {headers}
     );
    
@@ -48,7 +48,7 @@ const Cart = () => {
   const handlePlaceOrder=async()=>{
     try{
       const response = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/api/placeorder`,
+        `${process.env.VITE_API_BASE_URL}/api/placeorder`,
         {order: cart},
         {headers}
       );
