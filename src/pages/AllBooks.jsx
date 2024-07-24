@@ -2,13 +2,13 @@ import React, { useState,useEffect } from 'react'
 import axios from 'axios';
 import BookCard from '../components/BookCard';
 import Loader from '../components/Loader';
-
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const AllBooks = () => {
   const [Data,setData]=useState();
   useEffect(()=>{
   const fetch= async ()=>{
     const response= await axios.get(
-      `${process.env.VITE_API_BASE_URL}/api/getallbooks`
+      `${backend_url}/api/getallbooks`
     );
   
    setData(response.data.data);

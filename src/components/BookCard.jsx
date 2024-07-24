@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-hot-toast';
-
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const BookCard = ({data,favourite}) => {
   const headers={
     id: localStorage.getItem("id"),
@@ -11,7 +11,7 @@ const BookCard = ({data,favourite}) => {
   };
   const handleRemovefavourite= async()=>{
     const response = await axios.put(
-      `${process.env.VITE_API_BASE_URL}/api/remove-bookfrom-favourite`,
+      `${backend_url}/api/remove-bookfrom-favourite`,
       {},
       {headers}
     );

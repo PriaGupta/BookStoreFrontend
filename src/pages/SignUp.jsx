@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate,Link } from 'react-router-dom'
 import axios from 'axios';
 import {toast} from 'react-hot-toast';
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const SignUp = () => {
 
   const[values,setValues]=useState({
@@ -24,7 +25,7 @@ const SignUp = () => {
        }
        else{
         const response = await axios.post(
-          `${process.env.VITE_API_BASE_URL}/api/signup`,
+          `${backend_url}/api/signup`,
           values
         );
         toast(response.data.message);

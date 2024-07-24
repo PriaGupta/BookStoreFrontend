@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react'
 import Loader from '../Loader';
 import axios from 'axios';
 import {toast} from 'react-hot-toast';
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const Settings = () => {
   const [Value,setValue]= useState({address :""});
   const [ProfileData,setProfileData] = useState();
@@ -12,7 +13,7 @@ const Settings = () => {
   useEffect(()=>{
     const fetch= async()=>{
       const response = await axios.get(
-        `${process.env.VITE_API_BASE_URL}/api/getuserinformation`,
+        `${backend_url}/api/getuserinformation`,
         {headers}
       );
      
@@ -29,7 +30,7 @@ const Settings = () => {
 
   const handleAddressSubmit=async()=>{
     const response = await axios.put(
-      `${process.env.VITE_API_BASE_URLL}/api/updateaddress`,Value,
+      `${backend_url}/api/updateaddress`,Value,
       {headers}
     );
     toast(response.data.message);

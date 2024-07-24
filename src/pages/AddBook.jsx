@@ -2,6 +2,7 @@ import axios from 'axios';
 import React,{useState} from 'react'
 import toast from 'react-hot-toast';
 import {useNavigate} from 'react-router-dom';
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const AddBook = () => {
     const navigate= useNavigate();
     const [Data,setData]= useState({
@@ -31,7 +32,7 @@ const AddBook = () => {
               }
               else{
                 const response = await axios.post(
-                    `${process.env.VITE_API_BASE_URL}/api/addbook`,Data,
+                    `${backend_url}/api/addbook`,Data,
                     {headers}
                 );
                 setData({

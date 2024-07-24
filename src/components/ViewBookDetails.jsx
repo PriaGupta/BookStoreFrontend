@@ -7,6 +7,8 @@ import { FaCartPlus,FaEdit } from "react-icons/fa";
 import Loader from './Loader';
 import { useSelector } from 'react-redux';
 import {toast} from 'react-hot-toast';
+
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const ViewBookDetails = () => {
   const {id} = useParams();
   // console.log(id)
@@ -18,7 +20,7 @@ const ViewBookDetails = () => {
   useEffect(()=>{
     const fetch= async()=>{
     const response = await axios.get(
-      `${process.env.VITE_API_BASE_URL}/api/getbookbyid/${id}`
+      `${backend_url}/api/getbookbyid/${id}`
     );
    
     setData(response.data.data);
@@ -33,14 +35,14 @@ const ViewBookDetails = () => {
   };
   const handleFavourite=async()=>{
     const response= await axios.put(
-      `${process.env.VITE_API_BASE_URL}/api/add-bookto-favourite`,
+      `${backend_url}/api/add-bookto-favourite`,
       {},
       {headers});
       toast(response.data.message);
   }
   const handleCart= async()=>{
     const response= await axios.put(
-      `${process.env.VITE_API_BASE_URL}/api/addtocart`,
+      `${backend_url}/api/addtocart`,
       {},
       {headers});
       toast(response.data.message);
@@ -49,7 +51,7 @@ const ViewBookDetails = () => {
  
   const handleDelete = async()=>{
     const response= await axios.delete(
-      `${process.env.VITE_API_BASE_URL}/api/deletebook`,
+      `${backend_url}/api/deletebook`,
       {headers});
       toast(response.data.message);
       navigate("/allbooks");

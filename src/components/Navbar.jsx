@@ -16,18 +16,7 @@ const Navbar = () => {
             title:"All Books",
             link:"/allbooks"
         },
-        // {
-        //     title:"Cart",
-        //     link:"/cart"
-        // },
-      //   {
-      //       title:"Profile",
-      //       link:"/profile"
-      //   },
-      //   {
-      //     title:"Admin Profile",
-      //     link:"/profile"
-      // }
+       
     ];
   
     if (isLoggedIn) {
@@ -42,19 +31,6 @@ const Navbar = () => {
     links.push(profileLink);
   }
     
-
-    // if(isLoggedIn === false)
-    // {
-    //   links.splice(2,2);
-    // }
-
-    // if(isLoggedIn == true && role === 'user'){
-    //   links.splice(4,1);
-    // }
-
-    // if(isLoggedIn == true && role === 'admin'){
-    //   links.splice(3,1);
-    // }
     const [RespNav,setRespNav]=useState("hidden");
 
     const handleToggleNav = () => {

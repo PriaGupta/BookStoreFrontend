@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import Loader from '../Loader';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const OrderHistory = () => {
    const [orderhistory,setorderhistory]= useState();
   const headers={
@@ -12,7 +12,7 @@ const OrderHistory = () => {
   useEffect(()=>{
     const fetch= async()=>{
       const response = await axios.get(
-        `${process.env.VITE_API_BASE_URL}/api/getorderhistoryofuser`,
+        `${backend_url}/api/getorderhistoryofuser`,
         {headers}
       );
      

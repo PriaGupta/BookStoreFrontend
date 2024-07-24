@@ -6,7 +6,7 @@ import Loader from '../components/Loader';
 import MobileNav from '../components/Profile/MobileNav';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../store/auth';
-
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const Profile = () => {
   // const isLoggedIn = useSelector();
   const [Profile,setProfile]= useState();
@@ -18,7 +18,7 @@ const Profile = () => {
   useEffect(()=>{
     const fetch = async()=>{
       const response = await axios.get(
-        `${process.env.VITE_API_BASE_URL}/api/getuserinformation`,{headers}
+        `${backend_url}/api/getuserinformation`,{headers}
       );
       setProfile(response.data);
       dispatch(authActions.changeRole(response.data.role));

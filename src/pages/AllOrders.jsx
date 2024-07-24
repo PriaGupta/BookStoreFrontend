@@ -6,6 +6,7 @@ import { IoOpenOutline } from 'react-icons/io5';
 import { FaUserLarge, FaCheck } from 'react-icons/fa6';
 import SeeUserData from './SeeUserData';
 import {toast} from 'react-hot-toast';
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const AllOrders = () => {
     const [allorder,setallorder] = useState();
     const [options,setoptions] = useState(-1);
@@ -19,7 +20,7 @@ const AllOrders = () => {
     useEffect(()=>{
         const fetch = async()=>{
             const response = await axios.get(
-                `${process.env.VITE_API_BASE_URL}/api/getallorders`,
+                `${backend_url}/api/getallorders`,
                 {headers}
             );
             setallorder(response.data.data);
@@ -34,7 +35,7 @@ const AllOrders = () => {
     const SubmitChanges= async(i)=>{
         const id= allorder[i]._id;
         const response = await axios.put(
-            `${process.env.VITE_API_BASE_URL}/api/updatestatus/${id}`,
+            `${backend_url}/api/updatestatus/${id}`,
             Values,
             {headers}
         );

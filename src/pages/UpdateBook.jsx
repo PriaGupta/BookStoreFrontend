@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react'
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import {useNavigate, useParams} from 'react-router-dom';
+
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const UpdateBook = () => {
     const {id} = useParams();
     const navigate= useNavigate();
@@ -33,7 +35,7 @@ const UpdateBook = () => {
               }
               else{
                 const response = await axios.put(
-                    `${process.env.VITE_API_BASE_URL}/api/updatebook`,Data,
+                    `${backend_url}/api/updatebook`,Data,
                     {headers}
                 );
                 setData({
@@ -56,7 +58,7 @@ const UpdateBook = () => {
       useEffect(()=>{
         const fetch= async()=>{
         const response = await axios.get(
-          `${process.env.VITE_API_BASE_URL}/api/getbookbyid/${id}`,{headers}
+          `${backend_url}/api/getbookbyid/${id}`,{headers}
         ); 
         setData(response.data.data);
       };

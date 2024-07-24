@@ -5,6 +5,7 @@ import axios from 'axios';
 import { AiFillDelete } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
 import {toast} from 'react-hot-toast';
+const backend_url = 'https://bookstorebackend-j4km.onrender.com'
 const Cart = () => {
   const [cart,setcart] = useState();
   const [Total,settotal]= useState(0);
@@ -16,7 +17,7 @@ const Cart = () => {
   useEffect(()=>{
     const fetch= async()=>{
     const response = await axios.get(
-      `${process.env.VITE_API_BASE_URL}/api/getusercart`,
+      `${backend_url}/api/getusercart`,
       {headers}
     );
    
@@ -27,7 +28,7 @@ const Cart = () => {
 
   const deleteItem = async(bookid)=>{
    const response = await axios.put(
-      `${process.env.VITE_API_BASE_URL}/api/removefromcart/${bookid}`,{},
+      `${backend_url}/api/removefromcart/${bookid}`,{},
       {headers}
     );
    
@@ -48,7 +49,7 @@ const Cart = () => {
   const handlePlaceOrder=async()=>{
     try{
       const response = await axios.post(
-        `${process.env.VITE_API_BASE_URL}/api/placeorder`,
+        `${backend_url}/api/placeorder`,
         {order: cart},
         {headers}
       );

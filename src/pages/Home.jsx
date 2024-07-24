@@ -4,7 +4,7 @@ import RecentlyAdded from '../components/RecentlyAdded'
 
 const Home = () => {
 
-  console.log(process.env.VITE_API_BASE_URL,'backend_url');
+  // console.log(backe,'backend_url');
 
 
   return (
